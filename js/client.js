@@ -1,6 +1,6 @@
-'use strict'                            //  makes sure that all syntax errors show in the console
+'use strict'                                                     //  makes sure that all syntax errors show in the console
 
-const imageArray = [                    //  declaring the imageArray globally for use in both events
+const imageArray = [                                             //  declaring the imageArray globally for use in both events
   'assets/images/guitar_1920.jpg',
   'assets/images/guitar_275.jpg',
   'assets/images/guitar_sharpen.jpg',
@@ -15,7 +15,7 @@ const imageArray = [                    //  declaring the imageArray globally fo
   'assets/images/guitar_glass.jpg',  
 ];
 
-const button = document.querySelector('button');
+const button = document.querySelector('button');                //  gripping to the HTML elements
 const galleryButton = document.querySelector('.gallery');
 let galleryImage= document.querySelector('.galleryImage');
 let figcaption = document.querySelector('figcaption');
@@ -25,9 +25,9 @@ let linkOne = document.querySelector('.info_link');
 let linkTwo = document.querySelector('.artist_link');
 let linkThree = document.querySelector('.image_link');
 
-button.addEventListener('click', function() {
+button.addEventListener('click', function() {                   //  listens for the click event on the first button
 
-  const images = [                        //  an array of objects with the name images
+  const images = [                                              //  an array of objects with the name images
     {
       id: 0,
       title: "Original Image",
@@ -173,38 +173,45 @@ button.addEventListener('click', function() {
     },
   ];
 
-  let nameOP = document.querySelector('.name');
-  let idOP = document.querySelector('.id');
-  let descriptOP = document.querySelector('.description');
-  let dimOP = document.querySelector('.dim');
+  let nameOP = document.querySelector('.name');                     //  grips to the .name class
+  let idOP = document.querySelector('.id');                         //  grips to the .id class
+  let descriptOP = document.querySelector('.description');          //  grips to the .description class
+  let dimOP = document.querySelector('.dim');                       //  grips to the .dim class
   
-  let rand = Math.floor(Math.random() * images.length);
+  let rand = Math.floor(Math.random() * images.length);             //  declares the "rand" variable and assigns a rounded random number
 
-  randomImage.src = imageArray[rand];
+  randomImage.src = imageArray[rand];                               //  sets the src attribute of the <img> element to using "rand" as the index
 
-  nameOP.innerHTML = `Image Name:   ${images[rand].title}`;
+  nameOP.innerHTML = `Image Name:   ${images[rand].title}`;         //  outputs
   idOP.innerHTML = `ID Number:    ${images[rand].id}`;
   descriptOP.innerHTML = `Description:    ${images[rand].description}`;
   dimOP.innerHTML =`Dimensions:   ${images[rand].width} x ${images[rand].height}`;
   
-  linkOne.href = images[rand].imgURL;
+  linkOne.href = images[rand].imgURL;                               //  links
   linkTwo.href = images[rand].artistURL;
   linkThree.href = images[rand].creditURL;
 });
 
-galleryButton.addEventListener('click', function() {
+galleryButton.addEventListener('click', function() {       //  listens for the click event on the second button
  
-  // forEach() array item, output to the page
-  imageArray.forEach(output);
+  imageArray.forEach(output);                              //  the method forEach() calls the function "output" 
 
-  function output (item, index) {
-  galleryImage.src = imageArray[index];
-  figcaption.innerHTML = item;  
+  function output (item, index) {                          //  the function "output" passes the arguments item and index
+  galleryImage.src = imageArray[index];                    //  sets the src attribute for the img element for the gallery
+  figcaption.innerHTML = item;                             //  sets the figure caption content to be the file name of the image
   };
 
-  //for (let i=0; i < 12; i++) {
-    //img  = img.setAttribute("src", imageArray[i]);
-    //figcaption = imageArray[i];
-  //}
-
 });
+
+//  ********************************************  DESIGN FLAWS  ******************************************************
+
+//  During the coding process, I anticipated that the images would display one after another in a column.
+//  Unfortunately, they display one on top of the other.  I recognize now that there is only one <img> element, and the
+//  source is being changed by the forEach() loop over and over again until the last image is called.  Oops :(
+//  
+//  The links only work after the first button has been pushed.  This is because they are being called from the array of objects.
+//  I may be able to declare the array of objects globally, but not sure if this would be best practice.
+
+//  ******************************************************************************************************************
+
+
