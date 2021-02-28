@@ -19,7 +19,7 @@ const button = document.querySelector('button');
 const galleryButton = document.querySelector('.gallery');
 let galleryImage= document.querySelector('.galleryImage');
 let figcaption = document.querySelector('figcaption');
-let randomImage = document.querySelector('randomImage')
+let randomImage = document.querySelector('.randomImage')
 
 let linkOne = document.querySelector('.info_link');
 let linkTwo = document.querySelector('.artist_link');
@@ -180,7 +180,7 @@ button.addEventListener('click', function() {
   
   let rand = Math.floor(Math.random() * images.length);
 
-  randomImage = randomImage.setAttribute("src", imageArray[rand]);
+  randomImage.src = imageArray[rand];
 
   nameOP.innerHTML = `Image Name:   ${images[rand].title}`;
   idOP.innerHTML = `ID Number:    ${images[rand].id}`;
@@ -195,12 +195,10 @@ button.addEventListener('click', function() {
 galleryButton.addEventListener('click', function() {
  
   // forEach() array item, output to the page
-  imageArray.forEach(callback);
+  imageArray.forEach(output);
 
-  function callback(item, index) {
-    console.log(galleryImage);
-
-  galleryImage = galleryImage.setAttribute("src", imageArray[index]);
+  function output (item, index) {
+  galleryImage.src = imageArray[index];
   figcaption.innerHTML = item;  
   };
 
