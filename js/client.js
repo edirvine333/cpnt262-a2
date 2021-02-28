@@ -17,7 +17,7 @@ const imageArray = [                                             //  declaring t
 
 const button = document.querySelector('button');                //  gripping to the HTML elements
 const galleryButton = document.querySelector('.gallery');
-let galleryImage= document.querySelector('.galleryImage');      //  Attribution:  Aidan O'Reilly for noticing missing "." before class grip
+let galleryImage= document.querySelector('.galleryImage');      //  ATTRIBUTION:  Aidan O'Reilly for noticing missing "." before class grip
 let figcaption = document.querySelector('figcaption');
 let randomImage = document.querySelector('.randomImage')
 
@@ -203,9 +203,9 @@ galleryButton.addEventListener('click', function() {              //  listens fo
       const ImageElement = document.createElement('img');             //  creates a variable which will be used to create an <img> element in the loop
       const figCapElement = document.createElement('figcaption');     //  creates a variable which will be used to create a <figcaption> in the loop
       const figureElement = document.createElement('figure');         //  creates a variable which will be used o create a <figure> in the loop  
-                                                                      //  and the index number of the array for each iteration
+                                                                      //  ATTRIBUTION:  Vitally Gins and Aidan O'Reilly for assistance with scope issue
       div.appendChild(figureElement);                             
-      figureElement.appendChild(ImageElement);                    //  Attribution:  Patrick Teskey for assistance with appendChild() method
+      figureElement.appendChild(ImageElement);                    //  ATTRIBUTION:  Patrick Teskey for assistance with appendChild() method
       figureElement.appendChild(figCapElement);
 
       ImageElement.src = imageArray[index];                       //  sets the "src" attribute for the <img> element
