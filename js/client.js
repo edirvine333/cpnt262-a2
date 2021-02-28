@@ -195,35 +195,34 @@ button.addEventListener('click', function() {                   //  listens for 
 galleryButton.addEventListener('click', function() {              //  listens for the click event on the second button
  
   const div = document.querySelector('.galleryImages');           //  grips to the <div> for the gallery images
-  const ImageElement = document.createElement('img');             //  creates a variable which will be used to create an <img> element in the loop
-  const figCapElement = document.createElement('figcaption');     //  creates a variable which will be used to create a <figcaption> in the loop
-  const figureElement = document.createElement('figure');         //  creates a variable which will be used o create a <figure> in the loop
-
+  
   imageArray.forEach(output);                                     //  the method forEach() being passed the callback funtion "output"
 
     function output(item, index) {                                //  callback function "output" being passed the value of the item in the array
-                                                                  //  and the index number of the array for each iteration
+
+      const ImageElement = document.createElement('img');             //  creates a variable which will be used to create an <img> element in the loop
+      const figCapElement = document.createElement('figcaption');     //  creates a variable which will be used to create a <figcaption> in the loop
+      const figureElement = document.createElement('figure');         //  creates a variable which will be used o create a <figure> in the loop  
+                                                                      //  and the index number of the array for each iteration
       div.appendChild(figureElement);                             
       figureElement.appendChild(ImageElement);                    //  Attribution:  Patrick Teskey for assistance with appendChild() method
       figureElement.appendChild(figCapElement);
 
-      ImageElement.src = imageArray[index];
-      figCapElement.innerHTML = item;
+      ImageElement.src = imageArray[index];                       //  sets the "src" attribute for the <img> element
+      figCapElement.innerHTML = item;                             //  sets the content of the <figcaption> element to equal the array item
 
     }
   
 }); 
 
-//  ********************************************  DESIGN FLAWS  ******************************************************
+//  ***********************************************  DESIGN FLAWS  ******************************************************
 
-//  During the coding process, I anticipated that the images would display one after another in a column.
-//  Unfortunately, they display one on top of the other.  I expected a new <figure>, <img> and <figcaption> to be created
-//  for each iteration of the loop.
-//  
 //  The links only work after the first button has been pushed.  This is because they are being called from the array of objects.
-//  I may be able to declare the array of objects globally, but not sure if this would be best practice.
+//  I may be able to declare the array of objects globally, but not sure if this would be best practice.  Or, I could use appendChild()
+//  and go through the work of having the links created when the button is pushed.  Unfortunately, I didn't know this method
+//  at the time of writing that snippet of code.
 
 //  Reactive design, meaning at some point the design began to lead the way.
 
-//  ******************************************************************************************************************
+//  *********************************************************************************************************************
 
