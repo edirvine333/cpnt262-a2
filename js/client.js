@@ -1,18 +1,18 @@
 'use strict'                            //  makes sure that all syntax errors show in the console
 
 const imageArray = [                    //  declaring the imageArray globally for use in both events
-  '/assets/images/guitar_1920.jpg',
-  '/assets/images/guitar_275.jpg',
-  '/assets/images/guitar_sharpen.jpg',
-  '/assets/images/guitar_gs.jpg',
-  '/assets/images/guitar_sepia.jpg',
-  '/assets/images/guitar_negative.jpg', 
-  '/assets/images/guitar_blur.jpg',
-  '/assets/images/guitar_levels.jpg',
-  '/assets/images/guitar_brush.jpg',
-  '/assets/images/guitar_vignette.jpg',
-  '/assets/images/guitar_grain.jpg',
-  '/assets/images/guitar_glass.jpg',  
+  'assets/images/guitar_1920.jpg',
+  'assets/images/guitar_275.jpg',
+  'assets/images/guitar_sharpen.jpg',
+  'assets/images/guitar_gs.jpg',
+  'assets/images/guitar_sepia.jpg',
+  'assets/images/guitar_negative.jpg', 
+  'assets/images/guitar_blur.jpg',
+  'assets/images/guitar_levels.jpg',
+  'assets/images/guitar_brush.jpg',
+  'assets/images/guitar_vignette.jpg',
+  'assets/images/guitar_grain.jpg',
+  'assets/images/guitar_glass.jpg',  
 ];
 
 const button = document.querySelector('button');
