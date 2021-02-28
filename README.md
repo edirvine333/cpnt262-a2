@@ -16,6 +16,7 @@ Repository Maintainer: Ed Irvine
 
 - Patrick Teskey for assistance with appendChild() method
 - Aidan O'Reilly for assistance with syntax error and assistance fixing gallery output scope issue  
+- Vitaly Gins for assistance with fixing gallery output scope issue  
 
 -  [Image Credit]()  
 -  [Image Link]()
