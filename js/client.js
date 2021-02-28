@@ -192,16 +192,27 @@ button.addEventListener('click', function() {                   //  listens for 
   linkThree.href = images[rand].creditURL;
 });
 
-galleryButton.addEventListener('click', function() {       //  listens for the click event on the second button
+galleryButton.addEventListener('click', function() {              //  listens for the click event on the second button
  
-  imageArray.forEach(output);                              //  the method forEach() calls the function "output" 
+  const div = document.querySelector('.galleryImages');           //  grips to the <div> for the gallery images
+  const ImageElement = document.createElement('img');             //  creates a variable which will be used to create an <img> element in the loop
+  const figCapElement = document.createElement('figcaption');     //  creates a variable which will be used to create a <figcaption> in the loop
+  const figureElement = document.createElement('figure');         //  creates a variable which will be used o create a <figure> in the loop
 
-  function output (item, index) {                          //  the function "output" passes the arguments item and index
-  galleryImage.src = imageArray[index];                    //  sets the src attribute for the img element for the gallery
-  figcaption.innerHTML = item;                             //  sets the figure caption content to be the file name of the image
-  };
+  imageArray.forEach(output);                                     //  the method forEach() being passed the callback funtion "output"
 
-});
+    function output(item, index) {
+
+      div.appendChild(figureElement);
+      figureElement.appendChild(ImageElement);
+      figureElement.appendChild(figCapElement);
+
+      ImageElement.src = imageArray[index];
+      figCapElement.innerHTML = item;
+
+    }
+  
+}); 
 
 //  ********************************************  DESIGN FLAWS  ******************************************************
 
@@ -213,5 +224,4 @@ galleryButton.addEventListener('click', function() {       //  listens for the c
 //  I may be able to declare the array of objects globally, but not sure if this would be best practice.
 
 //  ******************************************************************************************************************
-
 
