@@ -17,7 +17,7 @@ const imageArray = [                                             //  declaring t
 
 const button = document.querySelector('button');                //  gripping to the HTML elements
 const galleryButton = document.querySelector('.gallery');
-let galleryImage= document.querySelector('.galleryImage');
+let galleryImage= document.querySelector('.galleryImage');      //  Attribution:  Aidan O'Reilly for noticing missing "." before class grip
 let figcaption = document.querySelector('figcaption');
 let randomImage = document.querySelector('.randomImage')
 
@@ -201,10 +201,10 @@ galleryButton.addEventListener('click', function() {              //  listens fo
 
   imageArray.forEach(output);                                     //  the method forEach() being passed the callback funtion "output"
 
-    function output(item, index) {
-
-      div.appendChild(figureElement);
-      figureElement.appendChild(ImageElement);
+    function output(item, index) {                                //  callback function "output" being passed the value of the item in the array
+                                                                  //  and the index number of the array for each iteration
+      div.appendChild(figureElement);                             
+      figureElement.appendChild(ImageElement);                    //  Attribution:  Patrick Teskey for assistance with appendChild() method
       figureElement.appendChild(figCapElement);
 
       ImageElement.src = imageArray[index];
@@ -217,11 +217,13 @@ galleryButton.addEventListener('click', function() {              //  listens fo
 //  ********************************************  DESIGN FLAWS  ******************************************************
 
 //  During the coding process, I anticipated that the images would display one after another in a column.
-//  Unfortunately, they display one on top of the other.  I recognize now that there is only one <img> element, and the
-//  source is being changed by the forEach() loop over and over again until the last image is called.  Oops :(
+//  Unfortunately, they display one on top of the other.  I expected a new <figure>, <img> and <figcaption> to be created
+//  for each iteration of the loop.
 //  
 //  The links only work after the first button has been pushed.  This is because they are being called from the array of objects.
 //  I may be able to declare the array of objects globally, but not sure if this would be best practice.
+
+//  Reactive design, meaning at some point the design began to lead the way.
 
 //  ******************************************************************************************************************
 
