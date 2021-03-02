@@ -1,4 +1,4 @@
-'use strict'                                                     //  makes sure that all syntax errors show in the console
+'use strict';                                                     //  makes sure that all syntax errors show in the console
 
 const imageArray = [                                             //  declaring the imageArray globally for use in both events
   'assets/images/guitar_1920.jpg',
