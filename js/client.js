@@ -187,7 +187,7 @@ button.addEventListener('click', function() {                   //  listens for 
   descriptOP.innerHTML = `Description:    ${images[rand].description}`;
   dimOP.innerHTML =`Dimensions:   ${images[rand].width} x ${images[rand].height}`;
   
-  linkOne.href = images[rand].imgURL;                               //  links
+  linkOne.href = images[rand].imgURL;                               //  sets the href attribute of the <a> elements for the links
   linkTwo.href = images[rand].artistURL;
   linkThree.href = images[rand].creditURL;
 });
